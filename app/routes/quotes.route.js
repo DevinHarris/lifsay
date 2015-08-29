@@ -6,7 +6,7 @@ var express = require('express'),
 	//quoteController = require('../controllers/quote.controller');
 
 
-// Seting up 
+// Setting up quotes route
 
 Router.route('/')
 	.get(function(req, res) {
@@ -23,7 +23,7 @@ Router.route('/')
 
 		quote.save(function(err, quote) {
 			if (err) {
-				console.log(err);
+				res.send('Sorry your quote could not be submitted. Please make sure to provide the required fields. :)');
 			} else {
 				res.json(quote);
 			}
